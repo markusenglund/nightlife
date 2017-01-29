@@ -32,7 +32,7 @@ passport.deserializeUser( (id, done) => {
 passport.use(new TwitterStrategy({
         consumerKey: TWITTER_CONSUMER_KEY,
         consumerSecret: TWITTER_CONSUMER_SECRET,
-        callbackURL: "https://nightlife-yogaboll.herokuapp.com//auth/twitter/callback"
+        callbackURL: "https://nightlife-yogaboll.herokuapp.com/auth/twitter/callback"
     },
     (token, tokenSecret, profile, done) => {
         console.log("passport cb called")
