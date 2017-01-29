@@ -17,7 +17,7 @@ const secrets = require('./secrets')
 const TWITTER_CONSUMER_KEY = secrets.twitterKey
 const TWITTER_CONSUMER_SECRET = secrets.twitterSecret
 const app = express();
-mongoose.connect("mongodb://markus:markus@ds163738.mlab.com:63738/nightlife-app") //should be secret!
+mongoose.connect(secrets.mongooseConnect)
 
 passport.serializeUser( (user, done) => {
     done(null, user.id);
