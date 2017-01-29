@@ -17,7 +17,7 @@ $(document).ready(() => {
         console.log(sessionStorage.location)
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:3000/yelp?location=" + searchInput, //Change this to the other way
+            url: "https://nightlife-yogaboll.herokuapp.com/yelp?location=" + searchInput, //Change this to the other way
             dataType: 'json',
             success: function(data) { //Should be arrow function
                 console.log("Your request succeeded!");
@@ -34,7 +34,7 @@ $(document).ready(() => {
                     let id = e.target.parentElement.id
                     $.ajax({
                         type: "GET",
-                        url: "http://127.0.0.1:3000/yelp/write",
+                        url: "https://nightlife-yogaboll.herokuapp.com/yelp/write",
                         dataType: "json",
                         data: {id: id},
                         success: data => {

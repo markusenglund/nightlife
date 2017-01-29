@@ -17,7 +17,7 @@ const secrets = require('./secrets')
 const TWITTER_CONSUMER_KEY = secrets.twitterKey
 const TWITTER_CONSUMER_SECRET = secrets.twitterSecret
 const app = express();
-mongoose.connect("mongodb://markus:markus@ds163738.mlab.com:63738/nightlife-app")
+mongoose.connect("mongodb://markus:markus@ds163738.mlab.com:63738/nightlife-app") //should be secret!
 
 passport.serializeUser( (user, done) => {
     done(null, user.id);
@@ -32,7 +32,7 @@ passport.deserializeUser( (id, done) => {
 passport.use(new TwitterStrategy({
         consumerKey: TWITTER_CONSUMER_KEY,
         consumerSecret: TWITTER_CONSUMER_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
+        callbackURL: "https://nightlife-yogaboll.herokuapp.com//auth/twitter/callback"
     },
     (token, tokenSecret, profile, done) => {
         console.log("passport cb called")
